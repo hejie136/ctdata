@@ -1,0 +1,171 @@
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 75, in <module>
+    update_before = arrow.now().floor('hour')
+NameError: name 'arrow' is not defined
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 79, in <module>
+    status='all',
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 548, in get_product
+    return self._post("GetProducts", extra_param=extra_param)
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 783, in _post
+    self.__mongodb.cb_lazada_result.insert(result)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/collection.py", line 2499, in insert
+    with self._socket_for_writes() as sock_info:
+  File "/usr/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/mongo_client.py", line 868, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 214, in select_server
+    address))
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 189, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongo-server1:55188: [Errno -2] Name or service not known
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 79, in <module>
+    status='all',
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 548, in get_product
+    return self._post("GetProducts", extra_param=extra_param)
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 783, in _post
+    self.__mongodb.cb_lazada_result.insert(result)
+AttributeError: 'Lazada' object has no attribute '_Lazada__mongodb'
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 79, in <module>
+    status='all',
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 549, in get_product
+    return self._post("GetProducts", extra_param=extra_param)
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 784, in _post
+    self.__mongodb.cb_lazada_result.insert(result)
+AttributeError: 'NoneType' object has no attribute 'cb_lazada_result'
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 86, in <module>
+    db.all_lazada_sku.insert_many(product_info, ordered=False)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/collection.py", line 724, in insert_many
+    blk.execute(self.write_concern.document)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/bulk.py", line 483, in execute
+    with client._socket_for_writes() as sock_info:
+  File "/usr/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/mongo_client.py", line 868, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 214, in select_server
+    address))
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 189, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 386, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 79, in <module>
+    status='all',
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 549, in get_product
+    return self._post("GetProducts", extra_param=extra_param)
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 778, in _post
+    result = requests.post(url, params=parameters, data=data or {})
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/api.py", line 110, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/api.py", line 56, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 595, in urlopen
+    chunked=chunked)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 389, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 79, in <module>
+    status='all',
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 549, in get_product
+    return self._post("GetProducts", extra_param=extra_param)
+  File "/home/ctdata05/ctdata/chinabrand_resource/lazada.py", line 778, in _post
+    result = requests.post(url, params=parameters, data=data or {})
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/api.py", line 110, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/api.py", line 56, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/sessions.py", line 628, in send
+    r.content
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/models.py", line 755, in content
+    self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/models.py", line 676, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/packages/urllib3/response.py", line 353, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/packages/urllib3/response.py", line 505, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/requests/packages/urllib3/response.py", line 465, in _handle_chunk
+    value = self._fp._safe_read(amt)
+  File "/usr/lib/python3.5/http/client.py", line 607, in _safe_read
+    chunk = self.fp.read(min(amt, MAXAMOUNT))
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 83, in <module>
+    l.remove_all_product()
+  File "fetch_our_lazada_product.py", line 10, in remove_all_product
+    skus = [s.SellerSku for s in rm_sku['Skus']]
+  File "fetch_our_lazada_product.py", line 10, in <listcomp>
+    skus = [s.SellerSku for s in rm_sku['Skus']]
+AttributeError: 'dict' object has no attribute 'SellerSku'
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 83, in <module>
+    l.remove_all_product()
+  File "fetch_our_lazada_product.py", line 8, in remove_all_product
+    db = pymongo.MongoClient().lazada
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/mongo_client.py", line 503, in __init__
+    self._topology.open()
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 151, in open
+    self._ensure_opened()
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 380, in _ensure_opened
+    self._update_servers()
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 428, in _update_servers
+    pool=self._create_pool_for_monitor(address),
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/topology.py", line 467, in _create_pool_for_monitor
+    appname=options.appname)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/pymongo/pool.py", line 299, in __init__
+    self.__metadata = _METADATA.copy()
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/bson/son.py", line 120, in copy
+    other.update(self)
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/bson/son.py", line 189, in update
+    for k, v in other.iteritems():
+  File "/home/ctdata05/.envs/ctdata/lib/python3.5/site-packages/bson/son.py", line 135, in iteritems
+    for k in self:
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "fetch_our_lazada_product.py", line 83, in <module>
+    l.remove_all_product()
+  File "fetch_our_lazada_product.py", line 10, in remove_all_product
+    skus = [s['SellerSku'] for s in rm_sku['Skus']]
+TypeError: 'NoneType' object is not subscriptable
